@@ -1,2 +1,2 @@
-# llama-68m
-Distillation version of llama-68m only for MLsys research use.
+# Llama-3-74M
+Distillation version of Llama-3-74m only for MLsys research use.

@@ -27,12 +27,12 @@ TEMPERATURE = 2.0
 ALPHA = 0.5
 
 MODEL_PATH = Path("/home/kylin/models/")
-STUDENT_NAME = f'Baby-Llama-58M'
+STUDENT_NAME = f'Llama-3-74M'
 TEACHER_NAME = f'Meta-Llama-3-8B'
 MODEL_OUTPUT = Path('/home/kylin/models/') /  STUDENT_NAME
 EVAL_SAMPLES = 8192
-DATA_PATH = Path("/home/kylin/datasets")
-wandb_log = True
+DATA_PATH = Path("/home/kylin/datasets/babylm")
+wandb_log = False
 #############
 
 teacher_dir = MODEL_PATH / TEACHER_NAME
@@ -85,6 +85,7 @@ class DistillationTrainer(Trainer):
     def compute_loss(self, model, inputs, return_outputs=False):
         # compute student output
         outputs_student = model(**inputs)
+        print("outputs_student.shape",outputs_student.shape)
         student_loss = outputs_student.loss
 
         # compute teacher output

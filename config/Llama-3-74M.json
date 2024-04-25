@@ -1,5 +1,5 @@
 {
-  "_name_or_path": "KylinC/Llama-3-68m",
+  "_name_or_path": "KylinC/Llama-3-74m",
   "architectures": [
     "LlamaForCausalLM"
   ],
